@@ -1,5 +1,77 @@
-<h2>Minha Foto de Auditoria</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Parabéns Douglas!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, #1a1a1a, #000); /* Fundo degradê luxuoso */
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
 
-<img src="https://github.com/github.png" alt="Logo do GitHub" width="200">
+        /* Efeito de brilho no texto */
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #fff, 0 0 20px #ff00de, 0 0 30px #ff00de;
+            animation: pulse 2s infinite;
+        }
 
-<p>Esta imagem acima é carregada diretamente de um link externo.</p>
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        /* Moldura especial para a imagem */
+        .foto-container {
+            position: relative;
+            padding: 10px;
+            background: linear-gradient(45deg, #ff00de, #fffb00, #00ffea);
+            border-radius: 15px;
+            animation: rotate-border 4s linear infinite;
+        }
+
+        @keyframes rotate-border {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .foto-container img {
+            display: block;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .mensagem {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #fffb00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Parabéns Douglas!</h1>
+
+    <div class="foto-container">
+        <img src="images" alt="Estrela do Douglas">
+    </div>
+
+    <p class="mensagem">O Analista Administrativo mais brabo do Hospital!</p>
+
+</body>
+</html>
