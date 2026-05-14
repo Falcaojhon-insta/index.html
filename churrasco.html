@@ -121,14 +121,14 @@
 
     /* ── Botão Música ── */
     #music-btn {
-      position: fixed; bottom: 24px; right: 24px; z-index: 100;
+      display: flex; align-items: center; justify-content: center;
+      margin: 20px auto 0 auto;
       width: 58px; height: 58px; border-radius: 50%; cursor: pointer;
       font-size: 1.6rem; background: rgba(255,120,0,0.22);
       backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       border: 1.5px solid rgba(255,150,50,0.45);
       box-shadow: 0 4px 20px rgba(200,60,0,0.5);
       transition: transform 0.2s, background 0.2s;
-      display: flex; align-items: center; justify-content: center;
     }
     #music-btn:hover { transform: scale(1.12); background: rgba(255,140,0,0.35); }
     #music-btn.playing { animation: spinNote 3s linear infinite; }
@@ -139,15 +139,10 @@
     }
 
     #music-tip {
-      position: fixed; bottom: 90px; right: 16px; z-index: 100;
-      background: rgba(0,0,0,0.78); color: #ffd700;
-      font-size: 0.78rem; font-weight: 700;
-      padding: 8px 14px; border-radius: 12px;
-      backdrop-filter: blur(8px); border: 1px solid rgba(255,215,0,0.3);
-      max-width: 170px; text-align: center;
-      animation: fadeIn 0.5s ease;
+      text-align: center; margin-top: 8px;
+      color: rgba(255,200,100,0.65); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.05em; min-height: 18px;
     }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; } }
 
     #yt-frame { position: fixed; top: -9999px; left: -9999px; width: 1px; height: 1px; }
   </style>
@@ -159,9 +154,6 @@
   <div class="smoke-wrap"    id="smoke"></div>
   <div id="yt-frame"></div>
 
-  <div id="music-tip">🎵 Clique pra tocar a música!</div>
-  <button id="music-btn" title="Ligar/Desligar música">🎵</button>
-
   <div class="card">
     <span class="bbq-icon">🍖</span>
     <h1>Parabéns,<br>você é incrível!</h1>
@@ -171,6 +163,9 @@
       te levava uma <strong style="color:#ffd700;">linguiça de churrasco!</strong> 🫶🔥
     </p>
     <a class="back-btn" href="index.html">← Voltar para o início</a>
+
+    <button id="music-btn" title="Ligar/Desligar música">🎵</button>
+    <p id="music-tip">🎵 Toca a música do Douglas!</p>
   </div>
 
   <script>
