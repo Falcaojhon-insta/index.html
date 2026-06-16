@@ -16,27 +16,37 @@
             --texto-escuro: #333333;
             --texto-secundario: #666666;
             --borda: #E0E5E0;
-            --branco: #FFFFFF;
+            --branco: rgba(255, 255, 255, 0.95); /* Deixa o fundo levemente transparente */
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--verde-claro);
             color: var(--texto-escuro);
             display: flex;
             justify-content: center;
+            
+            /* CONFIGURAÇÃO DA IMAGEM DE FUNDO FIXA */
+            background-image: url('fundo.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: var(--verde-claro); /* Cor de segurança caso a imagem demore a carregar */
         }
 
         .container {
             width: 100%;
             max-width: 800px;
             background-color: var(--branco);
-            box-shadow: 0px 0px 20px rgba(0,0,0,0.05);
+            box-shadow: 0px 0px 30px rgba(0,0,0,0.08);
             padding: 40px 20px;
             box-sizing: border-box;
             text-align: center;
+            backdrop-filter: blur(5px); /* Suaviza o fundo atrás do quadrado branco */
+            margin: 20px 0;
+            border-radius: 16px;
         }
 
         /* Cabeçalho */
@@ -64,7 +74,7 @@
 
         /* Seção do PIX */
         .pix-container {
-            background-color: var(--verde-claro);
+            background-color: #F4F6F4;
             border-radius: 12px;
             padding: 20px;
             display: flex;
@@ -89,7 +99,7 @@
 
         .btn-pix {
             background-color: var(--verde-escuro);
-            color: var(--branco);
+            color: #FFFFFF;
             border: none;
             padding: 12px 20px;
             border-radius: 8px;
@@ -117,7 +127,7 @@
             margin-bottom: 30px;
         }
 
-        /* Grade de Produtos (3 colunas no desktop, 1 no celular) */
+        /* Grade de Produtos */
         .produtos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -132,7 +142,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: var(--branco);
+            background: #FFFFFF;
         }
 
         .card-produto img {
@@ -157,7 +167,7 @@
         }
 
         .btn-presente {
-            background-color: var(--branco);
+            background-color: #FFFFFF;
             color: var(--verde-escuro);
             border: 1px solid var(--verde-escuro);
             padding: 10px;
@@ -170,7 +180,7 @@
 
         .btn-presente:hover {
             background-color: var(--verde-escuro);
-            color: var(--branco);
+            color: #FFFFFF;
         }
 
         /* Rodapé */
@@ -189,10 +199,11 @@
 
         .rodape-barra {
             background-color: var(--verde-escuro);
-            color: var(--branco);
+            color: #FFFFFF;
             padding: 15px;
             font-size: 0.9rem;
             margin: 20px -20px -40px -20px;
+            border-radius: 0 0 16px 16px;
         }
     </style>
 </head>
