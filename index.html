@@ -15,63 +15,45 @@
             --texto-escuro: #333333;
             --texto-secundario: #666666;
             --borda: #E0E5E0;
-            --branco: rgba(255, 255, 255, 0.95); 
+            --branco: #FFFFFF;
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            color: var(--texto-escuro);
+            background-color: #F1F3F0; /* Cor leve para destacar o retângulo principal */
             display: flex;
             justify-content: center;
-            
-            /* LIGAÇÃO DIRETA COM A SUA IMAGEM CARREGADA */
-            background-image: url('fundo.jpg');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-color: var(--verde-claro); 
         }
 
         .container {
             width: 100%;
             max-width: 800px;
             background-color: var(--branco);
-            box-shadow: 0px 0px 30px rgba(0,0,0,0.08);
-            padding: 40px 20px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.05);
             box-sizing: border-box;
             text-align: center;
-            backdrop-filter: blur(5px); 
             margin: 20px 0;
             border-radius: 16px;
+            overflow: hidden; /* Garante que a imagem não saia das bordas arredondadas */
+            padding-bottom: 40px;
         }
 
-        header h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            color: var(--verde-escuro);
-            margin: 0;
-            font-weight: 400;
+        /* BANNER DO TOPO AJUSTADO COM A SUA IMAGEM */
+        .banner-topo {
+            width: 100%;
+            display: block;
+            margin-bottom: 30px;
         }
 
-        header .subtitulo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-style: italic;
-            color: var(--texto-secundario);
-            margin: 10px 0;
+        .conteudo-interno {
+            padding: 0 20px;
         }
 
-        header .divisor {
-            color: var(--verde-escuro);
-            margin: 15px 0 30px 0;
-            font-size: 1.2rem;
-        }
-
+        /* Seção do PIX */
         .pix-container {
-            background-color: #F4F6F4;
+            background-color: var(--verde-claro);
             border-radius: 12px;
             padding: 20px;
             display: flex;
@@ -96,7 +78,7 @@
 
         .btn-pix {
             background-color: var(--verde-escuro);
-            color: #FFFFFF;
+            color: var(--branco);
             border: none;
             padding: 12px 20px;
             border-radius: 8px;
@@ -110,6 +92,7 @@
             background-color: #38473B;
         }
 
+        /* Seção de Título da Vitrine */
         .vitrine-titulo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
@@ -123,6 +106,7 @@
             margin-bottom: 30px;
         }
 
+        /* Grade de Produtos */
         .produtos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -137,7 +121,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: #FFFFFF;
+            background: var(--branco);
         }
 
         .card-produto img {
@@ -162,7 +146,7 @@
         }
 
         .btn-presente {
-            background-color: #FFFFFF;
+            background-color: var(--branco);
             color: var(--verde-escuro);
             border: 1px solid var(--verde-escuro);
             padding: 10px;
@@ -175,9 +159,10 @@
 
         .btn-presente:hover {
             background-color: var(--verde-escuro);
-            color: #FFFFFF;
+            color: var(--branco);
         }
 
+        /* Rodapé */
         footer {
             margin-top: 40px;
             border-top: 1px solid var(--borda);
@@ -193,7 +178,7 @@
 
         .rodape-barra {
             background-color: var(--verde-escuro);
-            color: #FFFFFF;
+            color: var(--branco);
             padding: 15px;
             font-size: 0.9rem;
             margin: 20px -20px -40px -20px;
@@ -204,60 +189,93 @@
 <body>
 
     <div class="container">
-        <header>
-            <h1>Vanessa & Douglas</h1>
-            <div class="subtitulo">Lista de Casamento</div>
-            <div class="divisor">🌿 🤍 🌿</div>
-        </header>
+        
+        <!-- SUA IMAGEM COMO BANNER DO TOPO DO RETÂNGULO -->
+        <img src="fundo.jpg" alt="Vanessa & Douglas" class="banner-topo">
 
-        <div class="pix-container">
-            <div class="pix-texto">
-                <h3>Presentes em Dinheiro (PIX)</h3>
-                <p>Se preferir, você pode contribuir com qualquer valor via PIX.</p>
+        <!-- Área interna com as margens corretas para os elementos abaixo -->
+        <div class="conteudo-interno">
+
+            <!-- Bloco do PIX -->
+            <div class="pix-container">
+                <div class="pix-texto">
+                    <h3>Presentes em Dinheiro (PIX)</h3>
+                    <p>Se preferir, você pode contribuir com qualquer valor via PIX.</p>
+                </div>
+                <button class="btn-pix" onclick="copiarPix()">Copiar Chave PIX</button>
             </div>
-            <button class="btn-pix" onclick="copiarPix()">Copiar Chave PIX</button>
+
+            <!-- Chamada dos presentes -->
+            <div class="vitrine-titulo">Escolha um presente</div>
+            <div class="vitrine-subtitulo">Clique em "Quero este presente" para reservar.</div>
+
+            <!-- Grade de Produtos -->
+            <div class="produtos-grid">
+                
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200" alt="Jogo de Lençol Casal">
+                    <div>
+                        <h4>Jogo de Lençol Casal</h4>
+                        <p>Percal 200 fios - Verde</p>
+                    </div>
+                    <button class="btn-presente">Quero este presente</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200" alt="Jogo de Panelas">
+                    <div>
+                        <h4>Jogo de Panelas</h4>
+                        <p>Ceramic Life Granada Vanilla</p>
+                    </div>
+                    <button class="btn-presente">Quero este presente</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200" alt="Airfryer Oven">
+                    <div>
+                        <h4>Airfryer Oven</h4>
+                        <p>12L Digital</p>
+                    </div>
+                    <button class="btn-presente">Quero este presente</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200" alt="Aparelho de Jantar">
+                    <div>
+                        <h4>Aparelho de Jantar</h4>
+                        <p>20 Peças</p>
+                    </div>
+                    <button class="btn-presente">Quero este presente</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200" alt="Jogo de Copos">
+                    <div>
+                        <h4>Jogo de Copos</h4>
+                        <p>6 Peças</p>
+                    </div>
+                    <button class="btn-presente">Quero este presente</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="https://via.placeholder.com/200" alt="Liquidificador">
+                    <div>
+                        <h4>Liquidificador</h4>
+                        <p>Turbo 900W</p>
+                    </div>
+                    <button class="btn-presente">Quero este presente</button>
+                </div>
+
+            </div>
+
+            <!-- Rodapé -->
+            <footer>
+                <p>Sua presença já é o nosso maior presente!<br>Obrigado por fazer parte deste momento especial.</p>
+                <div class="rodape-barra">Vanessa & Douglas 🤍</div>
+            </footer>
+
         </div>
 
-        <div class="vitrine-titulo">Escolha um presente</div>
-        <div class="vitrine-subtitulo">Clique em "Quero este presente" para reservar.</div>
-
-        <div class="produtos-grid">
-            <div class="card-produto">
-                <img src="https://via.placeholder.com/200" alt="Jogo de Lençol Casal">
-                <div><h4>Jogo de Lençol Casal</h4><p>Percal 200 fios - Verde</p></div>
-                <button class="btn-presente">Quero este presente</button>
-            </div>
-            <div class="card-produto">
-                <img src="https://via.placeholder.com/200" alt="Jogo de Panelas">
-                <div><h4>Jogo de Panelas</h4><p>Ceramic Life Granada Vanilla</p></div>
-                <button class="btn-presente">Quero este presente</button>
-            </div>
-            <div class="card-produto">
-                <img src="https://via.placeholder.com/200" alt="Airfryer Oven">
-                <div><h4>Airfryer Oven</h4><p>12L Digital</p></div>
-                <button class="btn-presente">Quero este presente</button>
-            </div>
-            <div class="card-produto">
-                <img src="https://via.placeholder.com/200" alt="Aparelho de Jantar">
-                <div><h4>Aparelho de Jantar</h4><p>20 Peças</p></div>
-                <button class="btn-presente">Quero este presente</button>
-            </div>
-            <div class="card-produto">
-                <img src="https://via.placeholder.com/200" alt="Jogo de Copos">
-                <div><h4>Jogo de Copos</h4><p>6 Peças</p></div>
-                <button class="btn-presente">Quero este presente</button>
-            </div>
-            <div class="card-produto">
-                <img src="https://via.placeholder.com/200" alt="Liquidificador">
-                <div><h4>Liquidificador</h4><p>Turbo 900W</p></div>
-                <button class="btn-presente">Quero este presente</button>
-            </div>
-        </div>
-
-        <footer>
-            <p>Sua presença já é o nosso maior presente!<br>Obrigado por fazer parte deste momento especial.</p>
-            <div class="rodape-barra">Vanessa & Douglas 🤍</div>
-        </footer>
     </div>
 
     <script>
